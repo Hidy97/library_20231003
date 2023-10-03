@@ -18,7 +18,7 @@ class BookController extends Controller
     public function destroy($id){
         Book::find($id)->delete();
         //még nem létezik... most már igen
-        return redirect('/book/list');
+        //return redirect('/book/list');
     }
 
     public function update(Request $request, $id){
@@ -28,7 +28,7 @@ class BookController extends Controller
         $book->pieces = $request->pieces;
         $book->save();
         //még nem létezik...
-        return redirect('/book/list');
+        //return redirect('/book/list');
     }
 
     public function store(Request $request){
@@ -38,7 +38,7 @@ class BookController extends Controller
         $book->pieces = $request->pieces;
         $book->save();
         //még nem létezik...
-        return redirect('/book/list');
+        //return redirect('/book/list');
     }
 
     //view függvények
