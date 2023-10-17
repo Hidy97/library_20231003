@@ -12,16 +12,19 @@ class LendingController extends Controller
         return Lending::all();
     }
 
-    public function show($id){
-        return Lending::find($id);
+    public function show ($user_id, $copy_id, $start)
+    {
+        $lending = Lending::where('user_id', $user_id)->where('copy_id', $copy_id)->where('start', $start)->get();
+        return $lending[0];
     }
 
-    public function destroy($id){
-        Lending::find($id)->delete();
+    public function destroy($user_id, $copy_id, $start){
+        LendingController::show($user_id, $copy_id, $start)->delete();
         //még nem létezik... most már igen
         //return redirect('/book/list');
     }
 
+    /*
     public function update(Request $request, $id){
         $lending = Lending::find($id);
         $lending->user_id = $request->user_id;
@@ -29,6 +32,7 @@ class LendingController extends Controller
         $lending->start = $request->start;
         $lending->save();
     }
+     */
 
     public function store(Request $request){
         $lending = new Lending();
