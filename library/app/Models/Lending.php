@@ -10,9 +10,9 @@ class Lending extends Model
     use HasFactory;
 
     protected $fillable = [
+        'start',
         'user_id', 
-        'copy_id', 
-        'start'
+        'copy_id' 
     ];
 
     protected function setKeysForSaveQuery($query)

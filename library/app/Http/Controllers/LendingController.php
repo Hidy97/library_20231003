@@ -12,14 +12,14 @@ class LendingController extends Controller
         return Lending::all();
     }
 
-    public function show ($user_id, $copy_id, $start)
+    public function show ($start, $user_id, $copy_id)
     {
-        $lending = Lending::where('user_id', $user_id)->where('copy_id', $copy_id)->where('start', $start)->get();
+        $lending = Lending::where('start', $start)->where('user_id', $user_id)->where('copy_id', $copy_id)->get();
         return $lending[0];
     }
 
-    public function destroy($user_id, $copy_id, $start){
-        LendingController::show($user_id, $copy_id, $start)->delete();
+    public function destroy($start, $user_id, $copy_id){
+        LendingController::show($start, $user_id, $copy_id)->delete();
         //még nem létezik... most már igen
         //return redirect('/book/list');
     }

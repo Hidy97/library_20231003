@@ -34,6 +34,7 @@ Route::middleware('auth')->group(function () {
 Route::apiResource('api/books', BookController::class);
 Route::apiResource('api/copies', CopyController::class);
 Route::apiResource('api/users', UserController::class);
-Route::delete('api/lendings/{user_id}{copy_id}{start}', [LendingController::class, 'destroy']);
+//Route::apiResource('api/lendings', LendingController::class);
+Route::delete('api/lendings/{start}{user_id}{copy_id}', [LendingController::class, 'destroy']);
 
 require __DIR__.'/auth.php';
