@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Book;
 use App\Models\Copy;
 use Illuminate\Http\Request;
 
@@ -44,5 +45,10 @@ class CopyController extends Controller
     public function listView(){
         $copys = Copy::all();
         return view('copy.list', ['copys' => $copys]);
+    }
+
+    public function copyBookLending(){
+        //több függv-t is használhatunk
+        return Copy::with('book')->with('lending')->get();
     }
 }
