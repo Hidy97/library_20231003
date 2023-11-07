@@ -17,15 +17,22 @@ class BookController extends Controller
 
     public function destroy($id){
         Book::find($id)->delete();
+<<<<<<< HEAD
         //még nem létezik... most már igen
         //return redirect('/book/list');
+=======
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
     }
 
     public function update(Request $request, $id){
         $book = Book::find($id);
         $book->author = $request->author;
         $book->title = $request->title;
+<<<<<<< HEAD
         //$book->pieces = $request->pieces;
+=======
+        
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
         $book->save();
         //még nem létezik...
         //return redirect('/book/list');
@@ -35,7 +42,11 @@ class BookController extends Controller
         $book = new Book();
         $book->author = $request->author;
         $book->title = $request->title;
+<<<<<<< HEAD
         //$book->pieces = $request->pieces;
+=======
+        
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
         $book->save();
         //még nem létezik...
         //return redirect('/book/list');

@@ -32,6 +32,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+<<<<<<< HEAD
 
 //bárki bejelentkezés nélkül elérheti
 //Route::apiResource('api/books', BookController::class);
@@ -69,3 +70,12 @@ Route::patch('/api/user_password/{id}', [UserController::class, 'updatePassword'
 Route::delete('api/lendings/{start}{user_id}{copy_id}', [LendingController::class, 'destroy']);
 
 require __DIR__ . '/auth.php';
+=======
+Route::apiResource('/api/books', BookController::class);
+Route::apiResource('/api/copies', CopyController::class);
+Route::apiResource('/api/users', UserController::class);
+Route::patch('/api/user_password/{id}', [UserController::class, 'updatePassword']);
+Route::delete('/api/lendings/{user_id}/{copy_id}/{start}', [LendingController::class, 'destroy']);
+
+require __DIR__.'/auth.php';
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44

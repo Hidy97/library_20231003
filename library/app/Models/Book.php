@@ -14,7 +14,10 @@ class Book extends Model
     protected $fillable = [
         'author',
         'title',
+<<<<<<< HEAD
         //'pieces',
+=======
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
     ];
 
     public function copy()    

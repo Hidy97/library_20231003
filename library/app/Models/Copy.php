@@ -12,10 +12,17 @@ class Copy extends Model
     protected  $primaryKey = 'copy_id';
 
     protected $fillable = [
+<<<<<<< HEAD
         'hardcover',
         'status',
         'publication',
         'book_id',
+=======
+        'hardcovered',
+        'status',
+        'publication',
+        'book_id'
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
     ];
 
     public function book()    

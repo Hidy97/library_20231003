@@ -16,19 +16,27 @@ return new class extends Migration
             $table->id('book_id');
             $table->string('author', 32);
             $table->string('title', 150);
+<<<<<<< HEAD
             //$table->integer('pieces')->default(50);
+=======
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
             $table->timestamps();
         });
 
         Book::create([
+<<<<<<< HEAD
             'author' => "Francz Kafka", 
             'title' => 'Átváltozás', 
             //'pieces' => 10
+=======
+            'author' => "Franz Kafka", 
+            'title' => 'Átváltozás', 
+>>>>>>> 2a5e920d315e24581cfa98bd30b0634158f91f44
         ]);
 
         Book::create([
-            'author' => "Valakik", 
-            'title' => 'valakik valahol'
+            'author' => "Asimov", 
+            'title' => 'Alapítvány'
         ]);
     }
 
