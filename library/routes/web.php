@@ -44,6 +44,7 @@ Route::middleware('auth')->group(function () {
 //admin mindenhez hozzá fér
 Route::middleware(['admin'])->group(function () {
     Route::apiResource('/users', UserController::class);
+    Route::apiResource('api/users', UserController::class);
 });
 
 //bejelentkezett felhasználó
@@ -58,11 +59,12 @@ Route::middleware(['auth.basic'])->group(function () {
     Route::get('with/lending_user2', [LendingController::class, 'lendingUser2']);
     //copyBookLending
     Route::get('with/copy_book_lending', [CopyController::class, 'copyBookLending']);
-    Route::get('with/user_many/{start}', [LendingController::class, 'userMany']);
+  //  Route::get('with/user_many/{start}', [LendingController::class, 'userMany']);
 });
 
 
 //bejelentkezés nélkül
+Route::apiResource('api/books', BookController::class);
 Route::patch('/api/user_password/{id}', [UserController::class, 'updatePassword']);
 Route::delete('api/lendings/{start}{user_id}{copy_id}', [LendingController::class, 'destroy']);
 
